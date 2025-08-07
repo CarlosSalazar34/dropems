@@ -1,5 +1,4 @@
-/* Fuente */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap');
 
 * {
     margin: 0;
@@ -8,7 +7,6 @@
     font-family: "Roboto", sans-serif;
 }
 
-/* Sidebar claro y moderno */
 aside {
     position: fixed;
     left: 0;
@@ -22,16 +20,18 @@ aside {
     justify-content: flex-start;
     gap: 2rem;
     border-right: 1px solid #e0e0e0;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+    z-index: 10;
 }
 
-/* Título */
 h1 {
     font-size: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-    color: #111;
+    color: #333;
     text-align: center;
     margin-bottom: 2rem;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1 span {
@@ -39,24 +39,30 @@ h1 span {
     color: #fff;
     border-radius: 1rem;
     padding: 0.3rem 0.7rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Enlaces de navegación */
 aside a {
     text-transform: uppercase;
     text-decoration: none;
-    color: #111;
+    color: #333;
     padding: 0.75rem 1rem;
     transition: all 0.3s ease;
-    /* border-radius: 8px; */
     display: block;
     font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 8px;
 }
 
 aside a:hover {
-    transform: translateY(-20px);
+    transform: translateY(-5px);
+    background-color: #f5f5f5;
 }
 
+aside a:focus {
+    outline: 2px solid #111;
+    background-color: #f0f0f0;
+}
 
 aside a::after {
     content: '';
@@ -78,11 +84,69 @@ main {
     min-height: 100vh;
 }
 
-
 #username {
     margin-top: 1rem;
-    font-size: 45px;
+    font-size: 35px;
     margin-left: 1rem;
     letter-spacing: normal;
+    display: flex;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+    font-weight: 400;
+    color: #222;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.8s ease forwards;
+}
 
+#username:hover {
+    transform: rotate(-3deg) scale(1.03);
+    color: #444;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2,
+h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    aside {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        overflow-x: auto;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+        gap: 1rem;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    main {
+        margin-left: 0;
+        margin-top: 1rem;
+        padding: 1rem;
+    }
+
+    #username {
+        font-size: 28px;
+        margin-left: 0.5rem;
+    }
 }

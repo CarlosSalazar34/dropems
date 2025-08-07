@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', path = 'styles.css') }}"> -->
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <title>dropems</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="static/logo.png" alt="logo">
+            <!-- <img src="{{ url_for('static', path = 'logo.png') }}" alt="logo"> -->
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#principal">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="principal" class="principal">
+            <div>
+                <h1>
+                    <span id="first">drop</span>
+                    <span id="second">ems</span>
+                </h1>
+
+                <h2>suelta tus problemas</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam odio fugiat repudiandae aspernatur
+                    assumenda nisi vero. Hic, doloremque, similique dolor quidem impedit assumenda molestias nulla
+                    soluta repellat error facere voluptate!</p>
+
+                <a href="#about" id="more">
+                    más info
+                </a>
+
+            </div>
+
+            <div>
+                <!-- <img src="{{ url_for('static', path = 'gota.png') }}" alt="gota"> -->
+                <img src="static/gota.png" alt="gota">
+            </div>
+
+        </section>
+
+        <section class="about" id="about">
+            <article data-aos="fade-up" data-aos-delay="200">
+                <h2 data-aos="fade-right" data-aos-delay="300">Sobre Dropems</h2>
+                <p data-aos="fade-left" data-aos-delay="400">
+                    Dropems es una plataforma creada para ayudarte a liberar tu mente y reducir la carga emocional del
+                    día a día. Nuestro objetivo es ofrecerte un espacio seguro y anónimo donde puedas escribir, expresar
+                    y soltar
+                    todo aquello que te preocupa.
+                </p>
+                <p data-aos="fade-left" data-aos-delay="500">
+                    Con herramientas simples y efectivas, podrás plasmar tus pensamientos y emociones, encontrar alivio
+                    y mantener una mejor salud mental.
+                </p>
+                <ul data-aos="zoom-in" data-aos-delay="600">
+                    <li>Escribe y libera tus emociones sin juicios.</li>
+                    <li>Guarda tus notas o elimínalas cuando quieras.</li>
+                    <li>Interfaz minimalista y fácil de usar.</li>
+                    <li>Espacio privado y seguro para tus pensamientos.</li>
+                </ul>
+            </article>
+        </section>
+
+
+        <section class="login" id="login" data-aos="fade-up" data-aos-delay="5000">
+            <article data-aos="fade-left">
+                <h2>Iniciar Sesión</h2>
+                <form class="login-form" method="post">
+
+                    <label for="name">Crea un username 😊</label>
+                    <input type="text" id="name" name="name" placeholder="tunombredeejemplo" required>
+
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="tuemail@ejemplo.com" required>
+
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" placeholder="Tu contraseña" required>
+
+                    <button type="submit">Entrar</button>
+                </form>
+
+                <p class="register-link">¿No tienes cuenta? <a href="#register">Regístrate aquí</a></p>
+            </article>
+        </section>
+
+
+
+
+    </main>
+    <footer>
+        <p>&copy; 2025 Dropems - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({});
+    </script>
+</body>
+
+</html>

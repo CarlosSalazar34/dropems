@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: "Roboto", sans-serif;
+}
+
+main {
+    flex: 1;
+}
+
+header,
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    background-color: black;
+    padding: .3rem;
+}
+
+ul {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    background-color: black;
+    padding: .3rem;
+    margin-right: 2rem;
+}
+
+li {
+    list-style: none;
+}
+
+header div img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+a:hover {
+    color: #ccc;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* ✅ SECCIÓN PRINCIPAL */
+.principal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 94vh;
+    width: 100%;
+    background-color: #f0f0f0;
+    animation: FadeIn 2s ease;
+}
+
+.principal div p {
+    text-align: justify;
+}
+
+#more {
+    background-color: black;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    width: 300px;
+}
+
+#more::after {
+    width: 0;
+}
+
+#more:hover {
+    transform: scale(1.1);
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.principal div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2rem;
+    align-items: center;
+    animation: FadeUp 2s ease;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.principal div p {
+    width: 400px;
+}
+
+@keyframes FadeUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.principal div img {
+    width: 300px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Estilos de títulos */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+#second {
+    background-color: black;
+    color: white;
+    padding: .3rem;
+    border-radius: 1rem;
+}
+
+.principal h2 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    margin: 1rem 0;
+    text-transform: uppercase;
+}
+
+@keyframes FadeIn {
+    from {
+        transform: translateY(100px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+@keyframes appear {
+    from {
+        /* opacity: 0; */
+        transform: translateX(-200px);
+    }
+
+    to {
+        /* opacity: 1; */
+        transform: translateX(0);
+    }
+}
+
+/* .about article {
+    max-width: 800px;
+    margin: 0 auto;
+    animation: appear linear;
+    animation-delay: 1s;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+} */
+
+
+.about article {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.about h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.about ul {
+    list-style: none;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 1rem;
+    background-color: #111;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.about li {
+    font-size: 1rem;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-left: 5px solid #00c853;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem;
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+.about li::before {
+    content: "✔";
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00e676;
+    font-weight: bold;
+}
+
+
+.btn-about {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.5rem;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-about:hover {
+    background-color: #444;
+}
+
+/* ✅ LOGIN */
+.login {
+    background-color: #f0f0f0;
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login article {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.login-form label {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.login-form input {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+    border-color: #555;
+}
+
+.login-form button {
+    padding: 0.8rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #444;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.register-link a {
+    color: black;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+    color: #555;
+}
+
+/* ✅ FOOTER */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ✅ MEDIA QUERIES */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .principal {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        padding: 2rem 1rem;
+    }
+
+    .principal div {
+        width: 100%;
+        padding: 1rem 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .principal div p {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .principal div img {
+        width: 80%;
+        max-width: 350px;
+    }
+
+    ul {
+        margin-right: 0;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    header,
+    nav {
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Smartphones */
+@media (max-width: 767px) {
+
+    header,
+    nav {
+        align-items: center;
+        padding: 0.5rem 1rem;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center !important;
+        gap: 1rem;
+        margin: 0 auto;
+        padding: 0;
+        width: auto;
+    }
+
+    .principal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        padding: 1.5rem 1rem;
+        width: 100%;
+    }
+
+    .principal div {
+        width: 100%;
+        max-width: 400px;
+        padding: 1rem 0;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .principal div p {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    .principal div img {
+        width: 50%;
+        max-width: 300px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .principal h2 {
+        font-size: 0.9rem;
+    }
+
+    #more {
+        width: 80%;
+        max-width: 280px;
+        margin: 1rem auto 0;
+    }
+
+
+    .about {
+        /* height: auto !important; */
+        padding: .3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        /* height: 100vh; */
+        justify-content: center;
+        height: 100vh;
+        animation: appear linear;
+
+    }
+
+    .about ul li {
+        font-size: 1rem;
+    }
+
+    .about article {
+        max-width: 100%;
+        padding: 0 1rem;
+        margin: 0 auto;
+
+    }
+
+    .login {
+        padding: 2rem 1rem;
+        min-height: auto;
+        height: 100vh;
+    }
+}

@@ -1,0 +1,88 @@
+/* Fuente */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Sidebar claro y moderno */
+aside {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 220px;
+    background-color: #ffffff;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+    border-right: 1px solid #e0e0e0;
+}
+
+/* Título */
+h1 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: #111;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 span {
+    background-color: #111;
+    color: #fff;
+    border-radius: 1rem;
+    padding: 0.3rem 0.7rem;
+}
+
+/* Enlaces de navegación */
+aside a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #111;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+    /* border-radius: 8px; */
+    display: block;
+    font-weight: 500;
+}
+
+aside a:hover {
+    transform: translateY(-20px);
+}
+
+
+aside a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: all 0.3s ease;
+    margin-top: 4px;
+}
+
+aside a:hover::after {
+    width: 100%;
+}
+
+main {
+    margin-left: 220px;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+
+#username {
+    margin-top: 1rem;
+    font-size: 45px;
+    margin-left: 1rem;
+    letter-spacing: normal;
+
+}

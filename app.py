@@ -3,11 +3,28 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import RedirectResponse, HTMLResponse
 from starlette.middleware.sessions import SessionMiddleware
+from pydantic import BaseModel
+
+class Note(BaseModel):
+    note: str
+    description: str
+
 
 
 app  = FastAPI()
 app.add_middleware(SessionMiddleware, secret_key = 'secreto')
 templates = Jinja2Templates(directory="templates")
+
+# MANEJO DE RUTAS
+
+@app.post("/publish-note")
+async def publish_note(note: Note):
+    print(note.note)
+    print(note.description)
+    return {"message": "true"}
+
+
+# MANEJO DE TEMPLATES
 
 async def home(request: Request, name: str = Form(None), email: str = Form(None), password: str = Form(None)):
     print(name, email, password)

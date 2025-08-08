@@ -24,6 +24,82 @@ aside {
     z-index: 10;
 }
 
+.form-action {
+    background: #fafafa;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-width: 500px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border: 1px solid #eaeaea;
+    gap: 1rem;
+}
+
+.form-action label {
+    font-weight: 500;
+    color: #222;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+}
+
+.form-action input[type="text"],
+.form-action textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    background: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-action input[type="text"]:focus,
+.form-action textarea:focus {
+    border-color: #2bc4c9;
+    box-shadow: 0 0 0 3px rgba(43, 196, 201, 0.2);
+    outline: none;
+}
+
+.form-action textarea {
+    min-height: 120px;
+    resize: vertical;
+    user-select: none;
+
+}
+
+.form-action button {
+    align-self: flex-start;
+    background-color: #2bc4c9;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.form-action button:hover {
+    background-color: #25a8ad;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 500px) {
+    .form-action {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+}
+
+
+
 h1 {
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -105,6 +181,116 @@ main {
     color: #444;
 }
 
+
+.notas button {
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+
+}
+
+button.close-button {
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 2rem;
+
+}
+
+dialog {
+    border: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 600px;
+    /* height: 100%; */
+    max-height: auto;
+    align-items: center;
+    padding: 1rem;
+
+}
+
+button.form-button {
+    color: black;
+    background-color: rgba(0, 0, 0, .3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    /* top: 50%; */
+    width: 50%;
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+
+}
+
+:root {
+    view-transition-name: none;
+}
+
+::view-transition {
+    pointer-events: none;
+}
+
+
+
+::view-transition-group(.vt-element-animation),
+::view-transition-group(.vt-element-animation-closing) {
+    animation-duration: 500ms;
+    animation-timing-function: cubic-bezier(0.38, 0.49, 0, 1);
+
+}
+
+
+::view-transition-old(.vt-element-animation),
+::view-transition-new(.vt-element-animation),
+::view-transition-old(.vt-element-animation-closing),
+::view-transition-new(.vt-element-animation-closing) {
+    height: 100%;
+    min-height: 100%;
+    overflow: clip;
+    object-position: left top;
+
+}
+
+@keyframes vt-fade-in {
+    from {
+        opacity: 0;
+
+    }
+}
+
+@keyframes vt-fade-out {
+    to {
+        opacity: 0;
+    }
+}
+
+::view-transition-old(.vt-element-animation) {
+    animation: vt-fade-out 300ms cubic-bezier(0.38, 0.49, 0, 1);
+}
+
+::view-transition-new(.vt-element-animation) {
+    animation: vt-fade-in 300ms cubic-bezier(0.38, 0.49, 0, 1);
+}
+
+::view-transition-old(.vt-element-animation-closing) {
+    animation: vt-fade-out 300ms cubic-bezier(0.75, 0, 0.41, -0.06);
+}
+
+::view-transition-new(.vt-element-animation-closing) {
+    animation: vt-fade-in 300ms cubic-bezier(0.75, 0, 0.41, -0.06);
+}
+
+
+
+
 @keyframes fadeIn {
     to {
         opacity: 1;
@@ -149,4 +335,5 @@ p {
         font-size: 28px;
         margin-left: 0.5rem;
     }
+
 }

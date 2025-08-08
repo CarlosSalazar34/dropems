@@ -11,7 +11,7 @@
 <body>
     <aside>
         <h1>Drop<span>ens</span></h1>
-        <a href="#">principal</a>
+        <a href="#" autofocus>principal</a>
 
         <a href="#">
             notas
@@ -27,10 +27,37 @@
 
 
     <main>
-        <section class="principal-page-user">
+        <header class="principal-page-user">
             <p id="username-header" style="display: none;">{{ username }}😁</p>
             <h1 id="username"></h1>
+        </header>
+
+        <section class="estadisticas">
+
+            <article class="notas">
+                <h3>Notas agregadas</h3>
+                <p>cuentalos de tu día... 🙂</p>
+                <dialog id="dialog-messages">
+                    <button class="close-button" onclick="toggleButton()">❌</button> 
+
+                    <form method="post" class="form-action">
+                        <label for="nota">
+                            de que quieres hablar? 
+                            <input type="text" name="nota" id="nota" placeholder="tema del cual te quieras desahogar"/>
+                            <textarea name="desahogo" id="desahogo" placeholder="desahogate aquí...">  
+                            </textarea>
+                        </label>
+                    </form>
+                    <div style="display: flex; align-items: center; justify-content: center;"><button type="submit" class="form-button" onclick="toggleButton()">Agregar nota</button></div>
+
+                </dialog>
+
+                <button onclick="toggleButton('dialog-messages')">Agregar</button> 
+
+            </article>
+
         </section>
+
     </main>
 
     <script src="static/home.js"></script>
